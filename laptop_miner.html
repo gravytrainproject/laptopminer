@@ -1,0 +1,97 @@
+<html>
+
+<head>
+<title>GRV Laptop Miner</title>
+<link type="text/css" rel="stylesheet" href="css/miner.css">
+</head>
+
+<body>
+<div id="snackbar"></div>
+<script src="js/eosjs-api.js"></script>
+<script src="js/eosjs-jsonrpc.js"></script>
+<script src="js/eosjs-jssig.js"></script>
+
+<div class = "wrapper">
+<h3>GRV Laptop Miner<span id ="qp_name_display"></span></h3>
+		<div id = "new_order_area">
+		   <table id = "new_order_table" width = 800px height = 305px style="border-top: thick solid rgb(60,60,60)">
+		      <tr>
+		         <td class="large_cell">API Endpoint (<a href ="https://validate.eosnation.io/eos/reports/endpoints.html" target = "_blank">Lookup</a>):</td>
+				 <td>
+				    <input type = "text" id = "endpoint_input" class="order_entry_input"></div>
+				 </td>
+				 <td class="large_cell">Input Miner Key</td>
+				 <td><input id = "loginbutton" class="fancybutton" type = "submit" value = "Login" onclick = "connect()"></td>
+		      </tr>
+			  <tr>
+				<td class="large_cell">Miner Account:</td>
+				<td>
+					<input type = "text" id = "miner_account_input" class="order_entry_input2" value = "youraccount" onchange = "window.localStorage['miner_account'] = document.getElementById('miner_account_input').value"></div>
+				</td>
+				<td class="large_cell">Permission Name:</td>
+				<td>
+					<input type = "text" id = "permission_input" class="order_entry_input2" onchange = "window.localStorage['permission_name'] = document.getElementById('permission_input').value"></div>
+				</td>
+		      </tr>
+			  <tr>
+				<td class="large_cell">Mining Interval (ms):</td>
+				<td>
+					<input type = "text" id = "interval_input" class="order_entry_input2" value = "5000" onchange = "window.localStorage['mining_interval'] = document.getElementById('interval_input').value"></div>
+				</td>
+				 <td class="large_cell">Action Count:</td>
+				<td>
+					<span id = "mine_action_count">0</span>
+				</td>
+			  </tr>
+			  <tr>
+				<td class="large_cell">Expiration:</td>
+				<td>
+					<input type = "text" id = "expiration_input" class="order_entry_input2" value = "6" onchange = "window.localStorage['expiration_interval'] = document.getElementById('expiration_input').value"></div>
+				</td>
+				<td class="large_cell">Error Count:</td>
+				<td>
+					<span id = "mine_error_count">0</span>
+				</td>
+			  </tr>
+			  <tr>
+				<td class="large_cell">Blocks Behind:</td>
+				<td>
+					<input type = "text" id = "blocks_behind_input" class="order_entry_input2" value = "3" onchange = "window.localStorage['blocks_behind'] = document.getElementById('blocks_behind_input').value"></div>
+				</td>
+				<td class="large_cell">GRV Mined (Uncomfirmed):</td>
+				<td>
+					<span id = "grv_mined_count">0</span>
+				</td>
+			  </tr>
+			  <tr>
+			    <td colspan = "4" rowspan="4"><input id = "minebutton" class="fancybutton" type = "submit" value = "Begin Mining" onclick = "begin_mining()"></td>
+			  </tr>
+		   </table>
+		</div>
+<div>
+
+<div id = "loader_wrapper">
+<center>
+
+Please enter your private key (this is NOT stored, you must enter before mining every time)
+<br>
+<br>
+
+Private Key:
+<br>
+<input type = "password" id = "pk_input" class="order_entry_input3">
+<br>
+<br>
+<input id = "storepkbutton" class="fancybutton" type = "submit" value = "Load" onclick = "close_pk_modal()">
+</center>
+</div>
+<script src="js/miner.js"></script>
+<script>
+
+
+</script>
+
+
+</body>
+
+</html>
