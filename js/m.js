@@ -160,7 +160,7 @@ function mine(){
 		traces.forEach(function(trace){
 			var action = trace.act;
 			if(action.account == "gravyhftdefi"){
-				if(action.name == "transfer"){
+				if(action.name == "quietransfer"){
 					var act_data = action.data;
 					if(act_data.from == "gravyhftdefi" && act_data.to == miner){
 						var grv_mined = Number(act_data.quantity.split(" ")[0]);
